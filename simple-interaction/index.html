@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Angular Drill</title>
   </head>
   <body>
+    <simple-interaction></simple-interaction>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script type="text/javascript">
+      angular.module('app', [])
+        .component('simpleInteraction', {
+          controller: function () {
+            const vm = this
+            vm.$onInit = function () {
+              //  alert('Sha-Zam!!!!!')
+            }
+            vm.submitName = function () {
+              console.log(vm);
+               console.log(vm.nickname);
 
+               if (vm.nickName === undefined) {
+
+                 vm.fullName = vm.firstName + " "
+                 + vm.lastName
+               }
+               else { vm.fullName = vm.firstName + vm.nickName +
+               vm.lastName}
+
+            }
+          },
+          template: `
+          <h1>Magical names with Paul!</h1>
+          <p><input type="text" placeholder="First Name" ng-model="$ctrl.firstName"/></p>
+          <p><input type="text" placeholder="Nickname" ng-model="$ctrl.nickname"/></p>
+          <p><input type="text" placeholder="Last Name" ng-model="$ctrl.lastName"/></p>
+          <p><button input type="submit" value="submit name" ng-click="$ctrl.submitName()">Submit</button></p>
+          <p>and Abrakadabra! ensues{{$ctrl.fullName}}</p>
+          `
+        })
+    </script>
   </body>
 </html>
