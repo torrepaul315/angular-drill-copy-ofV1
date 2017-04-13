@@ -1,3 +1,7 @@
+questions- go over your delete and edit buttons- better angular way to pass ids to the controller other than an argument?
+
+what's going on with the page refreshes?  do I need some prevent defaults in my life? 
+
 # $http Service
 
 Create an Angular application that allows users to CRUD data from a server.
