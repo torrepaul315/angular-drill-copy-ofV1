@@ -13,6 +13,7 @@
         vm.addHouse = function () {
           houseService.addHouse(vm.house)
           // TODO: go to the appropriate URL here
+          $state.go('show', {id: vm.houses.length - 1})
         }
       },
       template: `
@@ -26,7 +27,9 @@
             Address: <input ng-model="$ctrl.house.address">
           </p>
           <p>
-            <button type="submit">Create House</button>
+            <button
+
+            type="submit">Create House</button>
           </p>
         </form>
       `

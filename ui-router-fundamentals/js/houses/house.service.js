@@ -4,12 +4,15 @@
   angular.module('app')
     .service('houseService', function () {
       this.houses = [
-        {id: 1, name: 'Spacious two bedroom', address: '10 Main St'},
+        {id: 0, name: 'Spacious two bedroom', address: '10 Main St'},
       ]
 
       this.addHouse = function (house) {
-        this.houses.push(house)
+        console.log(house);
         house.id = this.houses.length
+        this.houses.push(house)
+        console.log(this.houses);
+
       }
 
       this.findById = function (id) {
